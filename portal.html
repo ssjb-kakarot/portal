@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Open Links in Chrome</title>
+  <script>
+    function openLinkInBrowser(link) {
+      window.open(link);
+    }
+
+    // Iterate over the range of values (from 7100 to 7150)
+    for (let i = 5000; i <= 7350; i++) {
+      // Construct the link using the current value of 'i'
+      let link = `https://jermelsacademy.org/student_dash.php?A=${i}`;
+
+      // Open the link in the browser
+      openLinkInBrowser(link);
+    }
+  </script>
+</head>
+<body>
+</body>
+</html>

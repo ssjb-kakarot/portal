@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign Up Page</title>
+    <style>
+        body {
+            background-image: url('bg.jpg');
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        #signup-box {
+            background-color: rgba(255, 255, 255, 0.7);
+            width: 400px;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        #profile-pic {
+            max-width: 150px;
+            border-radius: 50%;
+        }
+        #signup-button {
+            width: 45%;
+            padding: 10px;
+            background-color: #27ae60;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="signup-box">
+        <h2>Sign Up</h2>
+        <img id="profile-pic" src="pf.png" alt="Profile Picture">
+        <form id="signup-form">
+            <input type="text" placeholder="Name" name="name"><br><br>
+            <input type="text" id="username" placeholder="Username" name="username"><br><br>
+            <input type="tel" id="phone" placeholder="Phone Number" name="phone"><br><br>
+            <input type="email" id="email" placeholder="Email" name="email"><br><br>
+            <input type="password" id="password" placeholder="Password" name="password"><br><br>
+            <label for="country">Choose your country:</label>
+            <select id="country" name="country">
+               <option value="India">India</option>
+                <option value="China">China</option>
+                <option value="United States">United States</option>
+                <option value="Indonesia">Indonesia</option>
+                <option value="Pakistan">Pakistan</option>
+                <option value="Brazil">Brazil</option>
+                <option value="Nigeria">Nigeria</option>
+                <option value="Bangladesh">Bangladesh</option>
+                <option value="Russia">Russia</option>
+                <option value="Mexico">Mexico</option>
+                <option value="Japan">Japan</option>
+                <option value="Ethiopia">Ethiopia</option>
+                <option value="Philippines">Philippines</option>
+                <option value="Egypt">Egypt</option>
+                <option value="Vietnam">Vietnam</option>
+                <option value="DR Congo">DR Congo</option>
+                <option value="Turkey">Turkey</option>
+                <option value="Iran">Iran</option>
+                <option value="Germany">Germany</option>
+                <option value="Thailand">Thailand</option>
+                <option value="United Kingdom">United Kingdom</option>
+                <option value="France">France</option>
+                <option value="Italy">Italy</option>
+                <option value="Tanzania">Tanzania</option>
+                <option value="South Africa">South Africa</option>
+                <option value="Myanmar">Myanmar</option>
+                <option value="South Korea">South Korea</option>
+                <option value="Colombia">Colombia</option>
+                <option value="Spain">Spain</option>
+                <option value="Ukraine">Ukraine</option>
+                <option value="Uganda">Uganda</option>
+                <option value="Argentina">Argentina</option>
+                <option value="Sudan">Sudan</option>
+                <option value="Algeria">Algeria</option>
+                <option value="Kenya">Kenya</option>
+                <option value="Poland">Poland</option>
+                <option value="Canada">Canada</option>
+                <option value="Iraq">Iraq</option>
+                <option value="Afghanistan">Afghanistan</option>
+                <option value="Morocco">Morocco</option>
+            </select><br><br>
+            <input id="signup-button" type="button" value="Sign Up" onclick="storeData()">
+        </form>
+    </div>
+
+    <script>
+        function storeData() {
+            // Get the form data
+            var formData = new FormData(document.getElementById("signup-form"));
+            
+            // Convert the form data to JSON
+            var formDataJSON = {};
+            formData.forEach((value, key) => {
+                formDataJSON[key] = value;
+            });
+            
+            // Store the form data in local storage
+            localStorage.setItem('registrationData', JSON.stringify(formDataJSON));
+
+            // Display a thank you message
+            alert("Thank you for registering with us!");
+            
+            // Redirect to index.html
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>
